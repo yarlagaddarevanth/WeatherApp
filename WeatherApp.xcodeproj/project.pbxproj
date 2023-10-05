@@ -19,6 +19,7 @@
 		F2EE628B2ACF521500F6B459 /* WTDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE628A2ACF521500F6B459 /* WTDataProvider.swift */; };
 		F2EE628E2ACF53E300F6B459 /* WTAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE628D2ACF53E300F6B459 /* WTAPIService.swift */; };
 		F2EE62912ACF617F00F6B459 /* WTAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62902ACF617F00F6B459 /* WTAPIModel.swift */; };
+		F2EE62932ACF662600F6B459 /* WTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62922ACF662600F6B459 /* WTError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		F2EE628A2ACF521500F6B459 /* WTDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTDataProvider.swift; sourceTree = "<group>"; };
 		F2EE628D2ACF53E300F6B459 /* WTAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTAPIService.swift; sourceTree = "<group>"; };
 		F2EE62902ACF617F00F6B459 /* WTAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTAPIModel.swift; sourceTree = "<group>"; };
+		F2EE62922ACF662600F6B459 /* WTError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				F2EE628D2ACF53E300F6B459 /* WTAPIService.swift */,
 				F2EE62902ACF617F00F6B459 /* WTAPIModel.swift */,
+				F2EE62922ACF662600F6B459 /* WTError.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				F2AAC4A02ACF32D10039D078 /* SceneDelegate.swift in Sources */,
 				F2EE628B2ACF521500F6B459 /* WTDataProvider.swift in Sources */,
 				F2EE62912ACF617F00F6B459 /* WTAPIModel.swift in Sources */,
+				F2EE62932ACF662600F6B459 /* WTError.swift in Sources */,
 				F2EE628E2ACF53E300F6B459 /* WTAPIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
