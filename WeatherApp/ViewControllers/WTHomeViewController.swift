@@ -9,12 +9,17 @@ import UIKit
 
 class WTHomeViewController: UIViewController {
     @IBOutlet weak var cityView: WTCityView!
-    
+    @IBOutlet weak var searchBar: UISearchBar!
+
     var viewModel: WTHomeViewModel?
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setup()
+    }
+    
+    private func setup() {
+        // View Model
         let apiService = WTCityAPIServiceImpl(urlBuilder: WTCityAPIURLBuilderImpl())
         let dataProvider = WTCityWeatherDataProviderImpl(apiService: apiService)
 
@@ -23,6 +28,9 @@ class WTHomeViewController: UIViewController {
         viewModel?.onUpdate = { [weak self] in
             self?.cityView.configure(with: self?.viewModel?.cityViewModel)
         }
+    
+        // Search bar
+        searchBar.delegate = viewModel
     }
 
 

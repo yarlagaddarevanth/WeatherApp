@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
-class WTHomeViewModel {
+class WTHomeViewModel: NSObject {
     var cityViewModel: WTCityViewModel?
     let dataProvider: WTCityWeatherDataProvider
     
@@ -18,7 +19,11 @@ class WTHomeViewModel {
     }
     
     func initialLoad() {
-        dataProvider.weatherData(for: "london") { [weak self] weatherData in
+        fetchData(for: "")
+    }
+    
+    func fetchData(for city: String) {
+        dataProvider.weatherData(for: city) { [weak self] weatherData in
             self?.updateViewModel(with: weatherData)
         } onFailure: { [weak self] error in
             self?.handle(error: error)
@@ -28,6 +33,15 @@ class WTHomeViewModel {
     func updateViewModel(with weatherData: WTCityWeatherData) {
         cityViewModel = WTCityViewModel(weatherData: weatherData)
         onUpdate?()
+    }
+}
+
+//MARK: - Search Bar Delegate
+extension WTHomeViewModel: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text, !text.isEmpty {
+            fetchData(for: text)
+        }
     }
 }
 

@@ -28,7 +28,8 @@ class WTCityAPIServiceImpl: WTCityAPIService {
             onFailure(WTError())
             return
         }
-        guard let url = URL(string: String(format: urlBuilder.cityUrlString, city)) else {
+        let urlString = String(format: urlBuilder.cityUrlString, city.replacingOccurrences(of: " ", with: "%20"))
+        guard let url = URL(string: urlString) else {
             onFailure(WTError())
             return
         }

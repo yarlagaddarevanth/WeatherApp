@@ -17,23 +17,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihh-gu-IiV" customClass="WTCityView" customModule="WeatherApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="83" width="390" height="150"/>
+                                <rect key="frame" x="0.0" y="220" width="390" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="hVj-Wu-Ows"/>
                                 </constraints>
                             </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dmt-3p-CvG">
+                                <rect key="frame" x="0.0" y="64" width="390" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Q8f-n0-tay"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ihh-gu-IiV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Ep-TZ-r06"/>
+                            <constraint firstItem="dmt-3p-CvG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AmW-7x-jmI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ihh-gu-IiV" secondAttribute="trailing" id="YK7-w9-VLr"/>
-                            <constraint firstItem="ihh-gu-IiV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="umT-XV-CGi"/>
+                            <constraint firstItem="dmt-3p-CvG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Z9d-95-Vhb"/>
+                            <constraint firstItem="ihh-gu-IiV" firstAttribute="top" secondItem="dmt-3p-CvG" secondAttribute="bottom" constant="100" id="fQD-g1-I0n"/>
+                            <constraint firstItem="dmt-3p-CvG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="ndk-PY-WKk"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cityView" destination="ihh-gu-IiV" id="naM-cL-gfh"/>
+                        <outlet property="searchBar" destination="dmt-3p-CvG" id="Mx5-sz-yon"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
