@@ -43,9 +43,9 @@ class WTCityView: UIView {
     }
     
     func configure(with cityViewModel: WTCityViewModel?) {
-        headingLabel.text = cityViewModel?.heading
-        subHeadingLabel.text = cityViewModel?.subHeading
-        descriptionLabel.text = cityViewModel?.description
+        headingLabel.text = cityViewModel?.heading ?? ""
+        subHeadingLabel.text = cityViewModel?.subHeading ?? ""
+        descriptionLabel.text = cityViewModel?.description ?? ""
     }
     
 }

@@ -10,12 +10,5 @@ import Foundation
 protocol WTWeatherDataProvider {}
 
 protocol WTCityWeatherDataProvider: WTWeatherDataProvider {
-    func weather(for city: String) -> [String]
-}
-
-
-class WTCityWeatherDataProviderImpl: WTCityWeatherDataProvider {
-    func weather(for city: String) -> [String] {
-        return []
-    }
+    func weatherData(for city: String, onSuccess: @escaping ((WTCityWeatherData) -> Void), onFailure: @escaping ((Error) -> Void))
 }

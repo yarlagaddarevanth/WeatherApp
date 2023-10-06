@@ -25,6 +25,9 @@
 		F2EE629A2AD055C300F6B459 /* WTHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62992AD055C300F6B459 /* WTHomeViewModel.swift */; };
 		F2EE629C2AD0576800F6B459 /* WTCityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2EE629B2AD0576800F6B459 /* WTCityView.xib */; };
 		F2EE629E2AD0579000F6B459 /* WTCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE629D2AD0579000F6B459 /* WTCityView.swift */; };
+		F2EE62A02AD069D300F6B459 /* WTCityWeatherDataProviderImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE629F2AD069D300F6B459 /* WTCityWeatherDataProviderImpl.swift */; };
+		F2EE62A22AD06A6400F6B459 /* WTCityWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62A12AD06A6400F6B459 /* WTCityWeatherData.swift */; };
+		F2EE62A42AD0765100F6B459 /* WTCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62A32AD0765000F6B459 /* WTCityViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		F2EE62992AD055C300F6B459 /* WTHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTHomeViewModel.swift; sourceTree = "<group>"; };
 		F2EE629B2AD0576800F6B459 /* WTCityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WTCityView.xib; sourceTree = "<group>"; };
 		F2EE629D2AD0579000F6B459 /* WTCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTCityView.swift; sourceTree = "<group>"; };
+		F2EE629F2AD069D300F6B459 /* WTCityWeatherDataProviderImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTCityWeatherDataProviderImpl.swift; sourceTree = "<group>"; };
+		F2EE62A12AD06A6400F6B459 /* WTCityWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTCityWeatherData.swift; sourceTree = "<group>"; };
+		F2EE62A32AD0765000F6B459 /* WTCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTCityViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,10 +125,9 @@
 			children = (
 				F2AAC49D2ACF32D10039D078 /* AppDelegate.swift */,
 				F2AAC49F2ACF32D10039D078 /* SceneDelegate.swift */,
-				F2AAC4A12ACF32D10039D078 /* WTHomeViewController.swift */,
-				F2EE62992AD055C300F6B459 /* WTHomeViewModel.swift */,
-				F2EE629D2AD0579000F6B459 /* WTCityView.swift */,
-				F2EE629B2AD0576800F6B459 /* WTCityView.xib */,
+				F2EE62A72AD0791500F6B459 /* ViewControllers */,
+				F2EE62A52AD078DE00F6B459 /* ViewModels */,
+				F2EE62A62AD078F400F6B459 /* Views */,
 				F2EE628F2ACF53EA00F6B459 /* APIService */,
 				F2EE628C2ACF521E00F6B459 /* DataProviders */,
 				F2AAC4A32ACF32D10039D078 /* Main.storyboard */,
@@ -155,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				F2EE628A2ACF521500F6B459 /* WTDataProvider.swift */,
+				F2EE629F2AD069D300F6B459 /* WTCityWeatherDataProviderImpl.swift */,
+				F2EE62A12AD06A6400F6B459 /* WTCityWeatherData.swift */,
 			);
 			path = DataProviders;
 			sourceTree = "<group>";
@@ -176,6 +183,32 @@
 				F2EE62962AD04F4500F6B459 /* WTCityAPIServiceImpl.swift */,
 			);
 			path = CityAPIService;
+			sourceTree = "<group>";
+		};
+		F2EE62A52AD078DE00F6B459 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F2EE62992AD055C300F6B459 /* WTHomeViewModel.swift */,
+				F2EE62A32AD0765000F6B459 /* WTCityViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F2EE62A62AD078F400F6B459 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F2EE629D2AD0579000F6B459 /* WTCityView.swift */,
+				F2EE629B2AD0576800F6B459 /* WTCityView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F2EE62A72AD0791500F6B459 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F2AAC4A12ACF32D10039D078 /* WTHomeViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,13 +344,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2AAC4A22ACF32D10039D078 /* WTHomeViewController.swift in Sources */,
+				F2EE62A02AD069D300F6B459 /* WTCityWeatherDataProviderImpl.swift in Sources */,
 				F2EE629A2AD055C300F6B459 /* WTHomeViewModel.swift in Sources */,
 				F2AAC49E2ACF32D10039D078 /* AppDelegate.swift in Sources */,
 				F2AAC4A02ACF32D10039D078 /* SceneDelegate.swift in Sources */,
 				F2EE628B2ACF521500F6B459 /* WTDataProvider.swift in Sources */,
 				F2EE62912ACF617F00F6B459 /* WTAPIModel.swift in Sources */,
 				F2EE629E2AD0579000F6B459 /* WTCityView.swift in Sources */,
+				F2EE62A22AD06A6400F6B459 /* WTCityWeatherData.swift in Sources */,
 				F2EE62932ACF662600F6B459 /* WTError.swift in Sources */,
+				F2EE62A42AD0765100F6B459 /* WTCityViewModel.swift in Sources */,
 				F2EE62972AD04F4500F6B459 /* WTCityAPIServiceImpl.swift in Sources */,
 				F2EE628E2ACF53E300F6B459 /* WTAPIService.swift in Sources */,
 			);
