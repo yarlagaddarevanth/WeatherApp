@@ -19,12 +19,16 @@ class WTHomeViewModel: NSObject {
     }
     
     func initialLoad() {
-        fetchData(for: "")
+        if let latestSearchTextAvailable = WTSearchCacheManager.shared.retrieveLatest() {
+            fetchData(for: latestSearchTextAvailable)
+        }
     }
     
     func fetchData(for city: String) {
         dataProvider.weatherData(for: city) { [weak self] weatherData in
             self?.updateViewModel(with: weatherData)
+            // Also save latest successful searched city
+            WTSearchCacheManager.shared.saveLatest(text: weatherData.cityName)
         } onFailure: { [weak self] error in
             self?.handle(error: error)
         }

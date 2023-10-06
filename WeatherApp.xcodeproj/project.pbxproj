@@ -35,6 +35,8 @@
 		F2EE62B22AD081EB00F6B459 /* WTCityWeatherDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62B12AD081EB00F6B459 /* WTCityWeatherDataProviderTests.swift */; };
 		F2EE62B62AD096EA00F6B459 /* mockWeatherLondon.json in Resources */ = {isa = PBXBuildFile; fileRef = F2EE62B52AD096EA00F6B459 /* mockWeatherLondon.json */; };
 		F2EE62B72AD096EA00F6B459 /* mockWeatherLondon.json in Resources */ = {isa = PBXBuildFile; fileRef = F2EE62B52AD096EA00F6B459 /* mockWeatherLondon.json */; };
+		F2EE62B92AD0A46500F6B459 /* WTSearchCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62B82AD0A46400F6B459 /* WTSearchCacheManager.swift */; };
+		F2EE62BA2AD0A46500F6B459 /* WTSearchCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62B82AD0A46400F6B459 /* WTSearchCacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,7 @@
 		F2EE62AE2AD07FD400F6B459 /* WTUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTUtilities.swift; sourceTree = "<group>"; };
 		F2EE62B12AD081EB00F6B459 /* WTCityWeatherDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTCityWeatherDataProviderTests.swift; sourceTree = "<group>"; };
 		F2EE62B52AD096EA00F6B459 /* mockWeatherLondon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockWeatherLondon.json; sourceTree = "<group>"; };
+		F2EE62B82AD0A46400F6B459 /* WTSearchCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTSearchCacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				F2EE62AE2AD07FD400F6B459 /* WTUtilities.swift */,
+				F2EE62B82AD0A46400F6B459 /* WTSearchCacheManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -383,6 +387,7 @@
 				F2EE629E2AD0579000F6B459 /* WTCityView.swift in Sources */,
 				F2EE62A22AD06A6400F6B459 /* WTCityWeatherData.swift in Sources */,
 				F2EE62932ACF662600F6B459 /* WTError.swift in Sources */,
+				F2EE62B92AD0A46500F6B459 /* WTSearchCacheManager.swift in Sources */,
 				F2EE62A42AD0765100F6B459 /* WTCityViewModel.swift in Sources */,
 				F2EE62972AD04F4500F6B459 /* WTCityAPIServiceImpl.swift in Sources */,
 				F2EE628E2ACF53E300F6B459 /* WTAPIService.swift in Sources */,
@@ -396,6 +401,7 @@
 				F2EE62AB2AD07A9600F6B459 /* WTCityViewModelTests.swift in Sources */,
 				F2EE62B22AD081EB00F6B459 /* WTCityWeatherDataProviderTests.swift in Sources */,
 				F2AAC4B52ACF32D70039D078 /* WeatherAppTests.swift in Sources */,
+				F2EE62BA2AD0A46500F6B459 /* WTSearchCacheManager.swift in Sources */,
 				F2EE62AD2AD07BE900F6B459 /* WTMockData.swift in Sources */,
 				F2EE62A92AD07A6B00F6B459 /* WTHomeViewModelTests.swift in Sources */,
 				F2EE62952AD048CD00F6B459 /* WTAPIServiceTests.swift in Sources */,
