@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F2AAC49E2ACF32D10039D078 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AAC49D2ACF32D10039D078 /* AppDelegate.swift */; };
 		F2AAC4A02ACF32D10039D078 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AAC49F2ACF32D10039D078 /* SceneDelegate.swift */; };
-		F2AAC4A22ACF32D10039D078 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AAC4A12ACF32D10039D078 /* ViewController.swift */; };
+		F2AAC4A22ACF32D10039D078 /* WTHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AAC4A12ACF32D10039D078 /* WTHomeViewController.swift */; };
 		F2AAC4A52ACF32D10039D078 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2AAC4A32ACF32D10039D078 /* Main.storyboard */; };
 		F2AAC4A72ACF32D60039D078 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2AAC4A62ACF32D60039D078 /* Assets.xcassets */; };
 		F2AAC4AA2ACF32D60039D078 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2AAC4A82ACF32D60039D078 /* LaunchScreen.storyboard */; };
@@ -22,6 +22,9 @@
 		F2EE62932ACF662600F6B459 /* WTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62922ACF662600F6B459 /* WTError.swift */; };
 		F2EE62952AD048CD00F6B459 /* WTAPIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62942AD048CD00F6B459 /* WTAPIServiceTests.swift */; };
 		F2EE62972AD04F4500F6B459 /* WTCityAPIServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62962AD04F4500F6B459 /* WTCityAPIServiceImpl.swift */; };
+		F2EE629A2AD055C300F6B459 /* WTHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62992AD055C300F6B459 /* WTHomeViewModel.swift */; };
+		F2EE629C2AD0576800F6B459 /* WTCityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2EE629B2AD0576800F6B459 /* WTCityView.xib */; };
+		F2EE629E2AD0579000F6B459 /* WTCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE629D2AD0579000F6B459 /* WTCityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +48,7 @@
 		F2AAC49A2ACF32D10039D078 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2AAC49D2ACF32D10039D078 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2AAC49F2ACF32D10039D078 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F2AAC4A12ACF32D10039D078 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F2AAC4A12ACF32D10039D078 /* WTHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTHomeViewController.swift; sourceTree = "<group>"; };
 		F2AAC4A42ACF32D10039D078 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F2AAC4A62ACF32D60039D078 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2AAC4A92ACF32D60039D078 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +64,9 @@
 		F2EE62922ACF662600F6B459 /* WTError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTError.swift; sourceTree = "<group>"; };
 		F2EE62942AD048CD00F6B459 /* WTAPIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTAPIServiceTests.swift; sourceTree = "<group>"; };
 		F2EE62962AD04F4500F6B459 /* WTCityAPIServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTCityAPIServiceImpl.swift; sourceTree = "<group>"; };
+		F2EE62992AD055C300F6B459 /* WTHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTHomeViewModel.swift; sourceTree = "<group>"; };
+		F2EE629B2AD0576800F6B459 /* WTCityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WTCityView.xib; sourceTree = "<group>"; };
+		F2EE629D2AD0579000F6B459 /* WTCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTCityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +119,10 @@
 			children = (
 				F2AAC49D2ACF32D10039D078 /* AppDelegate.swift */,
 				F2AAC49F2ACF32D10039D078 /* SceneDelegate.swift */,
-				F2AAC4A12ACF32D10039D078 /* ViewController.swift */,
+				F2AAC4A12ACF32D10039D078 /* WTHomeViewController.swift */,
+				F2EE62992AD055C300F6B459 /* WTHomeViewModel.swift */,
+				F2EE629D2AD0579000F6B459 /* WTCityView.swift */,
+				F2EE629B2AD0576800F6B459 /* WTCityView.xib */,
 				F2EE628F2ACF53EA00F6B459 /* APIService */,
 				F2EE628C2ACF521E00F6B459 /* DataProviders */,
 				F2AAC4A32ACF32D10039D078 /* Main.storyboard */,
@@ -275,6 +284,7 @@
 			files = (
 				F2AAC4AA2ACF32D60039D078 /* LaunchScreen.storyboard in Resources */,
 				F2AAC4A72ACF32D60039D078 /* Assets.xcassets in Resources */,
+				F2EE629C2AD0576800F6B459 /* WTCityView.xib in Resources */,
 				F2AAC4A52ACF32D10039D078 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,11 +310,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2AAC4A22ACF32D10039D078 /* ViewController.swift in Sources */,
+				F2AAC4A22ACF32D10039D078 /* WTHomeViewController.swift in Sources */,
+				F2EE629A2AD055C300F6B459 /* WTHomeViewModel.swift in Sources */,
 				F2AAC49E2ACF32D10039D078 /* AppDelegate.swift in Sources */,
 				F2AAC4A02ACF32D10039D078 /* SceneDelegate.swift in Sources */,
 				F2EE628B2ACF521500F6B459 /* WTDataProvider.swift in Sources */,
 				F2EE62912ACF617F00F6B459 /* WTAPIModel.swift in Sources */,
+				F2EE629E2AD0579000F6B459 /* WTCityView.swift in Sources */,
 				F2EE62932ACF662600F6B459 /* WTError.swift in Sources */,
 				F2EE62972AD04F4500F6B459 /* WTCityAPIServiceImpl.swift in Sources */,
 				F2EE628E2ACF53E300F6B459 /* WTAPIService.swift in Sources */,
