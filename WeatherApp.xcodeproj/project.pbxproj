@@ -20,6 +20,8 @@
 		F2EE628E2ACF53E300F6B459 /* WTAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE628D2ACF53E300F6B459 /* WTAPIService.swift */; };
 		F2EE62912ACF617F00F6B459 /* WTAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62902ACF617F00F6B459 /* WTAPIModel.swift */; };
 		F2EE62932ACF662600F6B459 /* WTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62922ACF662600F6B459 /* WTError.swift */; };
+		F2EE62952AD048CD00F6B459 /* WTAPIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62942AD048CD00F6B459 /* WTAPIServiceTests.swift */; };
+		F2EE62972AD04F4500F6B459 /* WTCityAPIServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62962AD04F4500F6B459 /* WTCityAPIServiceImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		F2EE628D2ACF53E300F6B459 /* WTAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTAPIService.swift; sourceTree = "<group>"; };
 		F2EE62902ACF617F00F6B459 /* WTAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTAPIModel.swift; sourceTree = "<group>"; };
 		F2EE62922ACF662600F6B459 /* WTError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTError.swift; sourceTree = "<group>"; };
+		F2EE62942AD048CD00F6B459 /* WTAPIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTAPIServiceTests.swift; sourceTree = "<group>"; };
+		F2EE62962AD04F4500F6B459 /* WTCityAPIServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTCityAPIServiceImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				F2AAC4B42ACF32D70039D078 /* WeatherAppTests.swift */,
+				F2EE62942AD048CD00F6B459 /* WTAPIServiceTests.swift */,
 			);
 			path = WeatherAppTests;
 			sourceTree = "<group>";
@@ -151,8 +156,17 @@
 				F2EE628D2ACF53E300F6B459 /* WTAPIService.swift */,
 				F2EE62902ACF617F00F6B459 /* WTAPIModel.swift */,
 				F2EE62922ACF662600F6B459 /* WTError.swift */,
+				F2EE62982AD04FA500F6B459 /* CityAPIService */,
 			);
 			path = APIService;
+			sourceTree = "<group>";
+		};
+		F2EE62982AD04FA500F6B459 /* CityAPIService */ = {
+			isa = PBXGroup;
+			children = (
+				F2EE62962AD04F4500F6B459 /* WTCityAPIServiceImpl.swift */,
+			);
+			path = CityAPIService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +306,7 @@
 				F2EE628B2ACF521500F6B459 /* WTDataProvider.swift in Sources */,
 				F2EE62912ACF617F00F6B459 /* WTAPIModel.swift in Sources */,
 				F2EE62932ACF662600F6B459 /* WTError.swift in Sources */,
+				F2EE62972AD04F4500F6B459 /* WTCityAPIServiceImpl.swift in Sources */,
 				F2EE628E2ACF53E300F6B459 /* WTAPIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2AAC4B52ACF32D70039D078 /* WeatherAppTests.swift in Sources */,
+				F2EE62952AD048CD00F6B459 /* WTAPIServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

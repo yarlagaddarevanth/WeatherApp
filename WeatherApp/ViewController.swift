@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        WTCityAPIServiceImpl().weather(for: "london") { response in
+        WTCityAPIServiceImpl(urlBuilder: WTCityAPIURLBuilderImpl()).weather(for: "london") { response in
             
         } onFailure: { error in
             
