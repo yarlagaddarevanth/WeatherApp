@@ -8,9 +8,14 @@
 import Foundation
 
 class WTCityWeatherDataProviderImpl: WTCityWeatherDataProvider {
+    var apiService: WTCityAPIService
+    
+    init(apiService: WTCityAPIService) {
+        self.apiService = apiService
+    }
     
     func weatherData(for city: String, onSuccess: @escaping ((WTCityWeatherData) -> Void), onFailure: @escaping ((Error) -> Void)) {
-        WTCityAPIServiceImpl(urlBuilder: WTCityAPIURLBuilderImpl()).weather(for: "london") { [weak self] response in
+        apiService.weather(for: city) { [weak self] response in
             guard let self = self else { return }
             
             if let data = self.transform(apiResponse: response) {

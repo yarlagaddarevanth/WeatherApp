@@ -15,6 +15,6 @@ struct WTCityViewModel {
     init(weatherData: WTCityWeatherData) {
         heading = weatherData.cityName
         subHeading = weatherData.weather?.main
-        description = weatherData.weather?.description.capitalized
+        description = weatherData.weather?.description.firstUppercased
     }
 }

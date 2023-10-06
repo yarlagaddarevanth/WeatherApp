@@ -1,5 +1,5 @@
 //
-//  WTAPIServiceTests.swift
+//  WTHomeViewModelTests.swift
 //  WeatherAppTests
 //
 //  Created by Revanth Kumar Yarlagadda on 10/6/23.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import WeatherApp
 
-final class WTAPIServiceTests: XCTestCase {
+final class WTHomeViewModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -32,25 +32,5 @@ final class WTAPIServiceTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
-    func testBaseURLIsSetupCorrect() {
-        XCTAssertEqual(MockAPIURLBuilder().baseURL, "https://api.openweathermap.org/data/2.5/weather")
-    }
-    
-    func testFailureWhenPassingEmptyCity() {
-        let expectation  = XCTestExpectation(description: "Failure on passing empty city")
-        let cityAPIService = WTCityAPIServiceImpl(urlBuilder: WTCityAPIURLBuilderImpl())
-        cityAPIService.weather(for: "") { _ in
-            expectation.isInverted = true
-        } onFailure: { error in
-            expectation.fulfill()
-        }
 
-        wait(for: [expectation], timeout: 1.0)
-    }
-
-}
-
-class MockAPIURLBuilder: WTAPIURLBuilder {
-    
 }

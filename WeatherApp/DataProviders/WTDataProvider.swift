@@ -10,5 +10,7 @@ import Foundation
 protocol WTWeatherDataProvider {}
 
 protocol WTCityWeatherDataProvider: WTWeatherDataProvider {
+    var apiService: WTCityAPIService { get }
+    
     func weatherData(for city: String, onSuccess: @escaping ((WTCityWeatherData) -> Void), onFailure: @escaping ((Error) -> Void))
 }

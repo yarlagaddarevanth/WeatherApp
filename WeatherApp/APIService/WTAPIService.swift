@@ -13,7 +13,7 @@ let kAppID = "4c474428e6871538640cbea4ec4c66ff"
 protocol WTAPIService {}
 
 protocol WTCityAPIService {
-    var urlBuilder: WTCityAPIURLBuilder { get }
+    var urlBuilder: WTCityAPIURLBuilder { get set }
     
     func weather(for city: String,
                  onSuccess: @escaping (WTAPIResponse) -> Void,

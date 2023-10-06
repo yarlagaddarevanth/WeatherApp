@@ -14,7 +14,7 @@ class WTCityAPIURLBuilderImpl: WTCityAPIURLBuilder {
 }
 
 class WTCityAPIServiceImpl: WTCityAPIService {
-    let urlBuilder: WTCityAPIURLBuilder
+    var urlBuilder: WTCityAPIURLBuilder
     
     init(urlBuilder: WTCityAPIURLBuilder) {
         self.urlBuilder = urlBuilder
@@ -52,18 +52,17 @@ class WTCityAPIServiceImpl: WTCityAPIService {
                 
                 do {
                     if response.statusCode == 200 {
-                        let items = try JSONDecoder().decode(WTAPIResponse.self, from: data)
-                        onSuccess(items)
+                        let item = try JSONDecoder().decode(WTAPIResponse.self, from: data)
+                        onSuccess(item)
                     } else {
                         onFailure(WTError())
                     }
-                } catch {
+                } catch let error {
+                    print("rev decoding error: \(error)")
                     onFailure(WTError())
                 }
             }
-            
         }
         task.resume()
-
     }
 }

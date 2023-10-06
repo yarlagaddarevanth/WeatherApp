@@ -9,9 +9,13 @@ import Foundation
 
 class WTHomeViewModel {
     var cityViewModel: WTCityViewModel?
-    var dataProvider = WTCityWeatherDataProviderImpl()
+    let dataProvider: WTCityWeatherDataProvider
     
     var onUpdate: (() -> Void)?
+    
+    init(dataProvider: WTCityWeatherDataProvider) {
+        self.dataProvider = dataProvider
+    }
     
     func initialLoad() {
         dataProvider.weatherData(for: "london") { [weak self] weatherData in
