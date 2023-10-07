@@ -13,6 +13,7 @@ class WTCityView: UIView {
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var subHeadingLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,6 +47,20 @@ class WTCityView: UIView {
         headingLabel.text = cityViewModel?.heading ?? ""
         subHeadingLabel.text = cityViewModel?.subHeading ?? ""
         descriptionLabel.text = cityViewModel?.description ?? ""
+        
+        if let urlString = cityViewModel?.iconUrlString,
+           let url = URL(string: urlString) {
+            DispatchQueue.global().async { [weak self] in
+                do {
+                    let data = try Data(contentsOf: url)
+                    DispatchQueue.main.async { [weak self] in
+                        self?.iconImageView.image = UIImage(data: data)
+                    }
+                } catch let error {
+                    print("icon download error \(error)")
+                }
+            }
+        }
     }
     
 }
