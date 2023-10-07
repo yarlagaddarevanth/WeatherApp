@@ -10,17 +10,41 @@ import UIKit
 
 class WTHomeViewModel: NSObject {
     var cityViewModel: WTCityViewModel?
+    var searchBarViewModel: WTSearchBarViewModel?
+    var locationManager: WTLocationManager?
+    
     let dataProvider: WTCityWeatherDataProvider
     
     var onUpdate: (() -> Void)?
     
-    init(dataProvider: WTCityWeatherDataProvider) {
+    init(dataProvider: WTCityWeatherDataProvider,
+         searchBarViewModel: WTSearchBarViewModel = WTSearchBarViewModel()) {
         self.dataProvider = dataProvider
+        self.searchBarViewModel = searchBarViewModel
+        
+        // Location manager
+        self.locationManager = WTLocationManager()
     }
     
     func initialLoad() {
-        if let latestSearchTextAvailable = WTSearchCacheManager.shared.retrieveLatest() {
-            fetchData(for: latestSearchTextAvailable)
+        // Priority 1: If we have user's permission for current location, fetch and show current location's weather
+        // Priority 2: If we have user's latest search text, fetch and show current location's weather
+
+        // Location manager handlers setup
+        self.locationManager?.onReceivedCurrentCity = { [weak self] city in
+            self?.fetchData(for: city)
+        }
+        self.locationManager?.onFailureToReceiveCity = { [weak self]  in
+            if let latestSearchTextAvailable = WTSearchCacheManager.shared.retrieveLatest() {
+                self?.fetchData(for: latestSearchTextAvailable)
+            }
+        }
+        
+        // Check and request location. The callbacks will handle error scenarios too, to fall back on fetching weather data for latest search text.
+        if self.locationManager?.authorizationGranted == true {
+            self.locationManager?.requestLocation()
+        } else {
+            self.locationManager?.requestAuthorizationAndLocation()
         }
     }
     
@@ -42,6 +66,10 @@ class WTHomeViewModel: NSObject {
 
 //MARK: - Search Bar Delegate
 extension WTHomeViewModel: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchBarViewModel?.searchText = searchText
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text, !text.isEmpty {
             fetchData(for: text)

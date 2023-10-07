@@ -37,6 +37,12 @@
 		F2EE62B72AD096EA00F6B459 /* mockWeatherLondon.json in Resources */ = {isa = PBXBuildFile; fileRef = F2EE62B52AD096EA00F6B459 /* mockWeatherLondon.json */; };
 		F2EE62B92AD0A46500F6B459 /* WTSearchCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62B82AD0A46400F6B459 /* WTSearchCacheManager.swift */; };
 		F2EE62BA2AD0A46500F6B459 /* WTSearchCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62B82AD0A46400F6B459 /* WTSearchCacheManager.swift */; };
+		F2EE62BC2AD1A1B900F6B459 /* WTSearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62BB2AD1A1B800F6B459 /* WTSearchBarViewModel.swift */; };
+		F2EE62BD2AD1A1B900F6B459 /* WTSearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62BB2AD1A1B800F6B459 /* WTSearchBarViewModel.swift */; };
+		F2EE62BF2AD1A30800F6B459 /* WTSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62BE2AD1A30800F6B459 /* WTSearchBar.swift */; };
+		F2EE62C02AD1A30800F6B459 /* WTSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62BE2AD1A30800F6B459 /* WTSearchBar.swift */; };
+		F2EE62C22AD1ACE900F6B459 /* WTLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62C12AD1ACE900F6B459 /* WTLocationManager.swift */; };
+		F2EE62C32AD1ACE900F6B459 /* WTLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE62C12AD1ACE900F6B459 /* WTLocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +95,9 @@
 		F2EE62B12AD081EB00F6B459 /* WTCityWeatherDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTCityWeatherDataProviderTests.swift; sourceTree = "<group>"; };
 		F2EE62B52AD096EA00F6B459 /* mockWeatherLondon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockWeatherLondon.json; sourceTree = "<group>"; };
 		F2EE62B82AD0A46400F6B459 /* WTSearchCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTSearchCacheManager.swift; sourceTree = "<group>"; };
+		F2EE62BB2AD1A1B800F6B459 /* WTSearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTSearchBarViewModel.swift; sourceTree = "<group>"; };
+		F2EE62BE2AD1A30800F6B459 /* WTSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTSearchBar.swift; sourceTree = "<group>"; };
+		F2EE62C12AD1ACE900F6B459 /* WTLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +221,7 @@
 			children = (
 				F2EE62992AD055C300F6B459 /* WTHomeViewModel.swift */,
 				F2EE62A32AD0765000F6B459 /* WTCityViewModel.swift */,
+				F2EE62BB2AD1A1B800F6B459 /* WTSearchBarViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -221,6 +231,7 @@
 			children = (
 				F2EE629D2AD0579000F6B459 /* WTCityView.swift */,
 				F2EE629B2AD0576800F6B459 /* WTCityView.xib */,
+				F2EE62BE2AD1A30800F6B459 /* WTSearchBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,6 +249,7 @@
 			children = (
 				F2EE62AE2AD07FD400F6B459 /* WTUtilities.swift */,
 				F2EE62B82AD0A46400F6B459 /* WTSearchCacheManager.swift */,
+				F2EE62C12AD1ACE900F6B459 /* WTLocationManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -380,10 +392,12 @@
 				F2EE62A02AD069D300F6B459 /* WTCityWeatherDataProviderImpl.swift in Sources */,
 				F2EE629A2AD055C300F6B459 /* WTHomeViewModel.swift in Sources */,
 				F2EE62AF2AD07FD400F6B459 /* WTUtilities.swift in Sources */,
+				F2EE62BF2AD1A30800F6B459 /* WTSearchBar.swift in Sources */,
 				F2AAC49E2ACF32D10039D078 /* AppDelegate.swift in Sources */,
 				F2AAC4A02ACF32D10039D078 /* SceneDelegate.swift in Sources */,
 				F2EE628B2ACF521500F6B459 /* WTDataProvider.swift in Sources */,
 				F2EE62912ACF617F00F6B459 /* WTAPIModel.swift in Sources */,
+				F2EE62C22AD1ACE900F6B459 /* WTLocationManager.swift in Sources */,
 				F2EE629E2AD0579000F6B459 /* WTCityView.swift in Sources */,
 				F2EE62A22AD06A6400F6B459 /* WTCityWeatherData.swift in Sources */,
 				F2EE62932ACF662600F6B459 /* WTError.swift in Sources */,
@@ -391,6 +405,7 @@
 				F2EE62A42AD0765100F6B459 /* WTCityViewModel.swift in Sources */,
 				F2EE62972AD04F4500F6B459 /* WTCityAPIServiceImpl.swift in Sources */,
 				F2EE628E2ACF53E300F6B459 /* WTAPIService.swift in Sources */,
+				F2EE62BC2AD1A1B900F6B459 /* WTSearchBarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,9 +417,12 @@
 				F2EE62B22AD081EB00F6B459 /* WTCityWeatherDataProviderTests.swift in Sources */,
 				F2AAC4B52ACF32D70039D078 /* WeatherAppTests.swift in Sources */,
 				F2EE62BA2AD0A46500F6B459 /* WTSearchCacheManager.swift in Sources */,
+				F2EE62C02AD1A30800F6B459 /* WTSearchBar.swift in Sources */,
 				F2EE62AD2AD07BE900F6B459 /* WTMockData.swift in Sources */,
 				F2EE62A92AD07A6B00F6B459 /* WTHomeViewModelTests.swift in Sources */,
 				F2EE62952AD048CD00F6B459 /* WTAPIServiceTests.swift in Sources */,
+				F2EE62BD2AD1A1B900F6B459 /* WTSearchBarViewModel.swift in Sources */,
+				F2EE62C32AD1ACE900F6B459 /* WTLocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +594,7 @@
 				DEVELOPMENT_TEAM = 8AKFF8CNT9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We request your location access to show the latest weather at your current location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -604,6 +623,7 @@
 				DEVELOPMENT_TEAM = 8AKFF8CNT9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We request your location access to show the latest weather at your current location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

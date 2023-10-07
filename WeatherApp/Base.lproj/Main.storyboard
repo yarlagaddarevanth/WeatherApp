@@ -23,7 +23,7 @@
                                     <constraint firstAttribute="height" constant="150" id="hVj-Wu-Ows"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dmt-3p-CvG">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dmt-3p-CvG" customClass="WTSearchBar" customModule="WeatherApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="390" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
