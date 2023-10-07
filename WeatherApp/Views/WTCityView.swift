@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class WTCityView: UIView {
 
@@ -50,16 +51,7 @@ class WTCityView: UIView {
         
         if let urlString = cityViewModel?.iconUrlString,
            let url = URL(string: urlString) {
-            DispatchQueue.global().async { [weak self] in
-                do {
-                    let data = try Data(contentsOf: url)
-                    DispatchQueue.main.async { [weak self] in
-                        self?.iconImageView.image = UIImage(data: data)
-                    }
-                } catch let error {
-                    print("icon download error \(error)")
-                }
-            }
+            iconImageView.sd_setImage(with: url, placeholderImage: cityViewModel?.placeholderImage)
         }
     }
     

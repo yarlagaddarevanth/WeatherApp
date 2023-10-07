@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct WTCityViewModel {
     let heading: String?
@@ -13,7 +14,8 @@ struct WTCityViewModel {
     let description: String?
     private let icon: String?
     var iconUrlString: String?
-
+    let placeholderImage = UIImage(named: "all-weather")
+    
     init(weatherData: WTCityWeatherData) {
         heading = weatherData.cityName
         subHeading = weatherData.weather?.main
