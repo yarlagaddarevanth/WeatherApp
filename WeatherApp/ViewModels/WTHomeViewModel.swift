@@ -16,7 +16,8 @@ class WTHomeViewModel: NSObject {
     let dataProvider: WTCityWeatherDataProvider
     
     var onUpdate: (() -> Void)?
-    
+    var showSpinner: ((Bool) -> Void)?
+
     init(dataProvider: WTCityWeatherDataProvider,
          searchBarViewModel: WTSearchBarViewModel = WTSearchBarViewModel()) {
         self.dataProvider = dataProvider
@@ -41,14 +42,17 @@ class WTHomeViewModel: NSObject {
         }
         
         // Check and request location. The callbacks will handle error scenarios too, to fall back on fetching weather data for latest search text.
-        if self.locationManager?.authorizationGranted == true {
-            self.locationManager?.requestLocation()
+        if locationManager?.authorizationGranted == true {
+            locationManager?.requestLocation()
         } else {
-            self.locationManager?.requestAuthorizationAndLocation()
+            locationManager?.requestAuthorizationAndLocation()
         }
+        showSpinner?(true)
     }
     
     func fetchData(for city: String) {
+        showSpinner?(true)
+
         dataProvider.weatherData(for: city) { [weak self] weatherData in
             self?.updateViewModel(with: weatherData)
             // Also save latest successful searched city
@@ -61,6 +65,7 @@ class WTHomeViewModel: NSObject {
     func updateViewModel(with weatherData: WTCityWeatherData) {
         cityViewModel = WTCityViewModel(weatherData: weatherData)
         onUpdate?()
+        showSpinner?(false)
     }
 }
 
@@ -80,6 +85,7 @@ extension WTHomeViewModel: UISearchBarDelegate {
 //MARK: - Error Handling
 extension WTHomeViewModel {
     func handle(error: Error) {
+        showSpinner?(true)
         print("rev show error alert")
     }
 }

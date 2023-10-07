@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -30,6 +31,9 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Q8f-n0-tay"/>
                                 </connections>
                             </searchBar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="9WW-df-eyS">
+                                <rect key="frame" x="176.66666666666666" y="155" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -39,10 +43,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ihh-gu-IiV" secondAttribute="trailing" id="YK7-w9-VLr"/>
                             <constraint firstItem="dmt-3p-CvG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Z9d-95-Vhb"/>
                             <constraint firstItem="ihh-gu-IiV" firstAttribute="top" secondItem="dmt-3p-CvG" secondAttribute="bottom" constant="100" id="fQD-g1-I0n"/>
+                            <constraint firstItem="9WW-df-eyS" firstAttribute="top" secondItem="dmt-3p-CvG" secondAttribute="bottom" constant="35" id="fQg-Eu-gCS"/>
+                            <constraint firstItem="9WW-df-eyS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hvK-Sc-4qu"/>
                             <constraint firstItem="dmt-3p-CvG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="ndk-PY-WKk"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="9WW-df-eyS" id="CdD-oP-fFi"/>
                         <outlet property="cityView" destination="ihh-gu-IiV" id="naM-cL-gfh"/>
                         <outlet property="searchBar" destination="dmt-3p-CvG" id="Mx5-sz-yon"/>
                     </connections>

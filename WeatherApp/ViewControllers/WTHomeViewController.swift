@@ -10,6 +10,7 @@ import UIKit
 class WTHomeViewController: UIViewController {
     @IBOutlet weak var cityView: WTCityView!
     @IBOutlet weak var searchBar: WTSearchBar!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
 
     var viewModel: WTHomeViewModel?
         
@@ -29,10 +30,24 @@ class WTHomeViewController: UIViewController {
             self?.cityView.configure(with: self?.viewModel?.cityViewModel)
             self?.searchBar.configure(with: self?.viewModel?.searchBarViewModel)
         }
+        
+        activityIndicatorView.isHidden = true
+        viewModel?.showSpinner = { [weak self] show in
+            if show {
+                self?.activityIndicatorView.startAnimating()
+            } else {
+                self?.activityIndicatorView.stopAnimating()
+            }
+            self?.activityIndicatorView.isHidden = !show
+        }
     
         // Search bar
         searchBar.delegate = viewModel
         searchBar.configure(with: viewModel?.searchBarViewModel)
+    }
+    
+    func showSpinner() {
+        
     }
 }
 
