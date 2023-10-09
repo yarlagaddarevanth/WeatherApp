@@ -5,6 +5,10 @@ Revanth Interview Exercise for JPMC
 * Please open WeatherApp.xcworkspace file with Xcode(as Cocoapods is used).
 
 # The APP
+
+![Simulator Screen Shot - Clone 2 of iPhone 14 Pro - 2023-10-09 at 12 14 29](https://github.com/yarlagaddarevanth/WeatherApp/assets/15115837/2d7c519e-eb91-4797-8936-31c76cbae184)
+
+
 On Launch:
 * Priority 1: If user grants location permission, weather for user's current location is shown by default on launch.
 * Priority 2: If user has previously searched any city, weather for the latest searched city is shown by default on launch.
