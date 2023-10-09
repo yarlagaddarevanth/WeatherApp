@@ -43,6 +43,17 @@ class WTLocationManager: NSObject {
     func requestLocation() {
         locationManager.requestLocation()
     }
+    
+    fileprivate func handleReverseGeoCode(placemark: [CLPlacemark]?, error: Error?) {
+        DispatchQueue.main.async { [weak self] in
+            if let city = placemark?.first?.locality {
+                self?.onReceivedCurrentCity?(city)
+            } else {
+                // This handles error case too.
+                self?.onFailureToReceiveCity?()
+            }
+        }
+    }
 
 }
 
@@ -59,13 +70,9 @@ extension WTLocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager,
                          didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            location.geocode { [weak self] placemark, error in
-                if let city = placemark?.first?.locality {
-                    self?.onReceivedCurrentCity?(city)
-                } else {
-                    // This handles error case too.
-                    self?.onFailureToReceiveCity?()
-                }
+            DispatchQueue.global().async { [weak self] in
+                guard let self = self else { return }
+                location.geocode(completion: self.handleReverseGeoCode(placemark:error:))
             }
         } else {
             onFailureToReceiveCity?()

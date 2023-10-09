@@ -17,6 +17,7 @@ class WTHomeViewModel: NSObject {
     
     var onUpdate: (() -> Void)?
     var showSpinner: ((Bool) -> Void)?
+    var showGenericErrorAlert: (() -> Void)?
 
     init(dataProvider: WTCityWeatherDataProvider,
          searchBarViewModel: WTSearchBarViewModel = WTSearchBarViewModel()) {
@@ -42,16 +43,20 @@ class WTHomeViewModel: NSObject {
         }
         
         // Check and request location. The callbacks will handle error scenarios too, to fall back on fetching weather data for latest search text.
-        if locationManager?.authorizationGranted == true {
-            locationManager?.requestLocation()
-        } else {
-            locationManager?.requestAuthorizationAndLocation()
-        }
         showSpinner?(true)
+        DispatchQueue.global().async { [weak self] in
+            if self?.locationManager?.authorizationGranted == true {
+                self?.locationManager?.requestLocation()
+            } else {
+                self?.locationManager?.requestAuthorizationAndLocation()
+            }
+        }
     }
     
     func fetchData(for city: String) {
-        showSpinner?(true)
+        DispatchQueue.main.async { [weak self] in
+            self?.showSpinner?(true)
+        }
 
         dataProvider.weatherData(for: city) { [weak self] weatherData in
             self?.updateViewModel(with: weatherData)
@@ -64,8 +69,12 @@ class WTHomeViewModel: NSObject {
     
     func updateViewModel(with weatherData: WTCityWeatherData) {
         cityViewModel = WTCityViewModel(weatherData: weatherData)
-        onUpdate?()
-        showSpinner?(false)
+        
+        // Update UI
+        DispatchQueue.main.async { [weak self] in
+            self?.showSpinner?(false)
+            self?.onUpdate?()
+        }
     }
 }
 
@@ -85,7 +94,11 @@ extension WTHomeViewModel: UISearchBarDelegate {
 //MARK: - Error Handling
 extension WTHomeViewModel {
     func handle(error: Error) {
-        showSpinner?(true)
-        print("rev show error alert")
+        //TODO: Detect exact error type and display specific alerts.
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.showSpinner?(false)
+            self?.showGenericErrorAlert?()
+        }
     }
 }

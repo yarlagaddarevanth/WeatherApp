@@ -32,22 +32,43 @@ class WTHomeViewController: UIViewController {
         }
         
         activityIndicatorView.isHidden = true
-        viewModel?.showSpinner = { [weak self] show in
-            if show {
-                self?.activityIndicatorView.startAnimating()
-            } else {
-                self?.activityIndicatorView.stopAnimating()
-            }
-            self?.activityIndicatorView.isHidden = !show
-        }
-    
+        viewModel?.showSpinner = showSpinner(show:)
+        viewModel?.showGenericErrorAlert = showGenericErrorAlert
+        
         // Search bar
         searchBar.delegate = viewModel
         searchBar.configure(with: viewModel?.searchBarViewModel)
     }
     
-    func showSpinner() {
-        
+}
+
+//MARK: - Handle spinner
+extension WTHomeViewController {
+    fileprivate func showSpinner(show: Bool) {
+        if show {
+            activityIndicatorView.startAnimating()
+        } else {
+            activityIndicatorView.stopAnimating()
+        }
+        activityIndicatorView.isHidden = !show
+    }
+}
+
+
+//MARK: - Handle error alert
+extension WTHomeViewController {
+    fileprivate func showGenericErrorAlert() {
+        //TODO: Upgrade this method to receive specific error type and show accurate alerts.
+        //TODO: Localize
+        let alert = UIAlertController(title: "Something went wrong.",
+                                      message: "Please try again.",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok",
+                                      style: .default,
+                                      handler: nil))
+        present(alert,
+                animated: true,
+                completion: nil)
     }
 }
 

@@ -51,7 +51,7 @@ class WTCityView: UIView {
         
         if let urlString = cityViewModel?.iconUrlString,
            let url = URL(string: urlString) {
-            iconImageView.sd_setImage(with: url, placeholderImage: cityViewModel?.placeholderImage)
+            iconImageView.sd_setImage(with: url, placeholderImage: nil)
         }
     }
     
