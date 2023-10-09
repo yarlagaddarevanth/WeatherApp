@@ -13,5 +13,7 @@ struct WTMockData {
                                                                weather: WTCityWeather(id: 20,
                                                                                       main: "Sunny",
                                                                                       description: "sun is coming out",
-                                                                                      icon: "02n"))
+                                                                                      icon: "02n",
+                                                                                      temp: 89.50,
+                                                                                      humidity: 80))
 }

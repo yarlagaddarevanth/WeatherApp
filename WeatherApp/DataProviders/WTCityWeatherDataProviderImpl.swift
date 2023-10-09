@@ -44,9 +44,11 @@ extension WTCityWeatherData {
         
         return WTCityWeatherData(cityName: apiResponse.name,
                                  weather: WTCityWeather(id: apiResponseWeather.id,
-                                                 main: apiResponseWeather.main,
-                                                 description: apiResponseWeather.description,
-                                                 icon: apiResponseWeather.icon))
+                                                        main: apiResponseWeather.main,
+                                                        description: apiResponseWeather.description,
+                                                        icon: apiResponseWeather.icon,
+                                                        temp: apiResponse.main.temp,
+                                                        humidity: apiResponse.main.humidity))
     }
 }
 

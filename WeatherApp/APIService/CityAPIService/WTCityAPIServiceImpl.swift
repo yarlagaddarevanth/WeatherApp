@@ -9,7 +9,7 @@ import Foundation
 
 class WTCityAPIURLBuilderImpl: WTCityAPIURLBuilder {
     var cityUrlString: String {
-        "\(baseURL)?q=%@&appid=\(kAppID)"
+        "\(baseURL)?q=%@&units=imperial&appid=\(kAppID)"
     }
 }
 
@@ -36,10 +36,6 @@ class WTCityAPIServiceImpl: WTCityAPIService {
         
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { (data, response, error) in
-            if let data = data, let string = String(data: data, encoding: .utf8) {
-                print("rev json respnse \(string)")
-            }
-
             DispatchQueue.main.async {
                 if let error = error {
                     onFailure(error)
@@ -59,8 +55,7 @@ class WTCityAPIServiceImpl: WTCityAPIService {
                         onFailure(WTError())
                     }
                 } catch let error {
-                    print("rev decoding error: \(error)")
-                    onFailure(WTError())
+                    onFailure(error)
                 }
             }
         }

@@ -39,6 +39,10 @@ final class WTCityViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.heading, "New York")
         XCTAssertEqual(viewModel.subHeading, "Sunny")
         XCTAssertEqual(viewModel.description, "Sun is coming out")
+        XCTAssertEqual(viewModel.temperatureText, "89.5 °F")
+        XCTAssertEqual(viewModel.additionalInfo, "Humidity: 80.0%")
+        XCTAssertEqual(viewModel.iconUrlString, "https://openweathermap.org/img/wn/02n@2x.png")
+        XCTAssertEqual(viewModel.placeholderImage, UIImage(named: "all-weather"))
     }
 
 }

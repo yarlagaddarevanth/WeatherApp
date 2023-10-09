@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihh-gu-IiV" customClass="WTCityView" customModule="WeatherApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="220" width="390" height="150"/>
+                                <rect key="frame" x="0.0" y="220" width="390" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="hVj-Wu-Ows"/>
+                                    <constraint firstAttribute="height" priority="250" constant="200" id="hVj-Wu-Ows"/>
                                 </constraints>
                             </view>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dmt-3p-CvG" customClass="WTSearchBar" customModule="WeatherApp" customModuleProvider="target">
@@ -42,6 +42,7 @@
                             <constraint firstItem="dmt-3p-CvG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AmW-7x-jmI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ihh-gu-IiV" secondAttribute="trailing" id="YK7-w9-VLr"/>
                             <constraint firstItem="dmt-3p-CvG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Z9d-95-Vhb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ihh-gu-IiV" secondAttribute="bottom" constant="20" id="boq-7f-XaF"/>
                             <constraint firstItem="ihh-gu-IiV" firstAttribute="top" secondItem="dmt-3p-CvG" secondAttribute="bottom" constant="100" id="fQD-g1-I0n"/>
                             <constraint firstItem="9WW-df-eyS" firstAttribute="top" secondItem="dmt-3p-CvG" secondAttribute="bottom" constant="35" id="fQg-Eu-gCS"/>
                             <constraint firstItem="9WW-df-eyS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hvK-Sc-4qu"/>

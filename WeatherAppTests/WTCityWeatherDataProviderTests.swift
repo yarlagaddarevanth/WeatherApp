@@ -44,6 +44,8 @@ final class WTCityWeatherDataProviderTests: XCTestCase {
             XCTAssertEqual(weatherData.cityName, "London")
             XCTAssertEqual(weatherData.weather?.main, "Clouds")
             XCTAssertEqual(weatherData.weather?.description, "overcast clouds")
+            XCTAssertEqual(weatherData.weather?.temp, 287.53)
+            XCTAssertEqual(weatherData.weather?.humidity, 80.0)
             expectation.fulfill()
         } onFailure: { error in
             expectation.isInverted = true

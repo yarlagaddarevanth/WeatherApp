@@ -38,8 +38,12 @@ class WTHomeViewController: UIViewController {
         // Search bar
         searchBar.delegate = viewModel
         searchBar.configure(with: viewModel?.searchBarViewModel)
+        searchBar.becomeFirstResponder()
+        
+        // Tap to dismiss keyboard
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        view.addGestureRecognizer(tap)
     }
-    
 }
 
 //MARK: - Handle spinner
@@ -53,7 +57,6 @@ extension WTHomeViewController {
         activityIndicatorView.isHidden = !show
     }
 }
-
 
 //MARK: - Handle error alert
 extension WTHomeViewController {
@@ -72,3 +75,9 @@ extension WTHomeViewController {
     }
 }
 
+//MARK: - Tap Handler
+extension WTHomeViewController {
+    @objc func didTap() {
+        searchBar.resignFirstResponder()
+    }
+}

@@ -13,7 +13,7 @@ On Launch:
 
 # Technical Details:
 * Followed MVVM for all the views.
-* Used SDWebImage library on Cocoapods for Image Caching if weather status icons.
+* Used 'SDWebImage' library on Cocoapods for Image Caching of weather status icons. Dependent Pods are included within the project repository as recommended.
 * 'WTLocationManager' manages permission requests and fetching user's current location.
 * Used Apple's Reverse geocoding functions to get user's current city from user's current location coordinates. 
 * Followed Dependency Injection for DataProvider, APIService and URLBuilder using protocols. Given more time, We can also implement dependency injection for the HomeViewModel.
@@ -22,4 +22,7 @@ On Launch:
 
 # TODO:
 * Save weather data as well along with city name to instantly show data on launch
+* Give choice to users to view temperature in different Units.
+* Given more time, add more unit tests to increase test coverage.
+* Bugfix - Fix the initial delay on app launch when fetching location fails.
 

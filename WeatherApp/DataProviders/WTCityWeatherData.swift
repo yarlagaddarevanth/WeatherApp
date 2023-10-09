@@ -17,4 +17,6 @@ struct WTCityWeather {
     let main: String
     let description: String
     let icon: String
+    let temp: Double?
+    let humidity: Double?
 }

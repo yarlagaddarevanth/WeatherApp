@@ -13,7 +13,9 @@ class WTCityView: UIView {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var subHeadingLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var additionalInfoLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
 
     override init(frame: CGRect) {
@@ -48,7 +50,9 @@ class WTCityView: UIView {
         headingLabel.text = cityViewModel?.heading ?? ""
         subHeadingLabel.text = cityViewModel?.subHeading ?? ""
         descriptionLabel.text = cityViewModel?.description ?? ""
-        
+        temperatureLabel.text = cityViewModel?.temperatureText ?? ""
+        additionalInfoLabel.text = cityViewModel?.additionalInfo ?? ""
+
         if let urlString = cityViewModel?.iconUrlString,
            let url = URL(string: urlString) {
             iconImageView.sd_setImage(with: url, placeholderImage: nil)

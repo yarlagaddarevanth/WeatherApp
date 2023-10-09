@@ -11,6 +11,7 @@ struct WTAPIResponse: Codable {
     let id: Double
     let name: String
     let weather: [WTAPIWeather]
+    let main: WTAPIMain
 }
 
 struct WTAPIWeather: Codable {
@@ -18,4 +19,9 @@ struct WTAPIWeather: Codable {
     let main: String
     let description: String
     let icon: String
+}
+
+struct WTAPIMain: Codable {
+    let temp: Double
+    let humidity: Double
 }
