@@ -38,7 +38,7 @@ extension WTCityWeatherDataProviderImpl {
 
 extension WTCityWeatherData {
     static func data(from apiResponse: WTAPIResponse) -> WTCityWeatherData? {
-        guard let apiResponseWeather = apiResponse.weather.first else {
+        guard let apiResponseWeather = apiResponse.weather?.first else {
             return WTCityWeatherData(cityName: apiResponse.name)
         }
         
@@ -47,8 +47,8 @@ extension WTCityWeatherData {
                                                         main: apiResponseWeather.main,
                                                         description: apiResponseWeather.description,
                                                         icon: apiResponseWeather.icon,
-                                                        temp: apiResponse.main.temp,
-                                                        humidity: apiResponse.main.humidity))
+                                                        temp: apiResponse.main?.temp,
+                                                        humidity: apiResponse.main?.humidity))
     }
 }
 

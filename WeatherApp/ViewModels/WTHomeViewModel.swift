@@ -61,7 +61,7 @@ class WTHomeViewModel: NSObject {
         dataProvider.weatherData(for: city) { [weak self] weatherData in
             self?.updateViewModel(with: weatherData)
             // Also save latest successful searched city
-            WTSearchCacheManager.shared.saveLatest(text: weatherData.cityName)
+            WTSearchCacheManager.shared.saveLatest(text: city)
         } onFailure: { [weak self] error in
             self?.handle(error: error)
         }
